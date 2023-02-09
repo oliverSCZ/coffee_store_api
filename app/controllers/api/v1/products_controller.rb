@@ -21,6 +21,26 @@ def create
 	end
 end
 
+def update
+	@producto = Product.find(params[:id])
+	@producto.update(product_params)
+	if @producto.update(product_params)
+		format.json { render :show, status: :ok }
+	else
+		format.json { render json: @producto.errors, status: :unprocessable_entity }
+	end
+
+end
+
+def destroy
+	@producto.destroy
+	if @producto.destroyed?
+		render json: { message: 'El producto fue eliminado' }, status: :ok
+	else
+		render json: { errors: @producto.errors.full_messages },
+		status: :not_acceptable
+	end
+end
 
 private
 
