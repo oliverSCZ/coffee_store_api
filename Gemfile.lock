@@ -217,7 +217,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
-  rack-cors (~> 0.4.0)
+  rack-cors
   rails (~> 7.0.4, >= 7.0.4.2)
   selenium-webdriver
   sprockets-rails
